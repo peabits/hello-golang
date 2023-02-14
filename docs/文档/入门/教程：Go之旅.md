@@ -12,6 +12,6 @@ $ go install golang.org/x/website/tour@latest
 
 这将把`tour`的二进制文件放在你的GOPATH的bin目录中。
 
-注意：有关其他教程，请参阅[教程](../教程.md "教程")。
+注意：有关其他教程，请参阅[教程](../../教程.md "教程")。
 
 [返回顶部 🔝](#教程：Go之旅)
