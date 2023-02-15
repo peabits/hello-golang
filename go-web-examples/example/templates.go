@@ -1,8 +1,10 @@
-package main
+package example
 
 import (
 	"html/template"
 	"net/http"
+	"path"
+	"runtime"
 )
 
 type Todo struct {
@@ -15,9 +17,11 @@ type TodoPageData struct {
 	Todos     []Todo
 }
 
-func main() {
-	tmpl := template.Must(template.ParseFiles("layout.html"))
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+func Templates() {
+	_, c, _, _ := runtime.Caller(0)
+
+	tmpl := template.Must(template.ParseFiles(path.Dir(c) + "/layout.html"))
+	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
 		data := TodoPageData{
 			PageTitle: "My TODO List",
 			Todos: []Todo{

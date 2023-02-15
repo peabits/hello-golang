@@ -1,12 +1,13 @@
-package main
+package example
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
-func main() {
+func RoutingUsingMux() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/books/{title}/page/{page}", func(w http.ResponseWriter, r *http.Request) {

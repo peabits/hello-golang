@@ -1,8 +1,10 @@
-package main
+package example
 
 import (
 	"fmt"
 	"net/http"
+	"path"
+	"runtime"
 
 	"github.com/gorilla/websocket"
 )
@@ -12,7 +14,7 @@ var upgrader = websocket.Upgrader{
 	WriteBufferSize: 1024,
 }
 
-func main() {
+func Websockets() {
 	http.HandleFunc("/echo", func(w http.ResponseWriter, r *http.Request) {
 		conn, _ := upgrader.Upgrade(w, r, nil) // error ignored for sake of simplicity
 
@@ -34,7 +36,8 @@ func main() {
 	})
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "websockets.html")
+		_, c, _, _ := runtime.Caller(0)
+		http.ServeFile(w, r, path.Dir(c)+"/websockets.html")
 	})
 
 	http.ListenAndServe(":8080", nil)

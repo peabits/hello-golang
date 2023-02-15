@@ -1,4 +1,4 @@
-package main
+package example
 
 import (
 	"fmt"
@@ -14,15 +14,15 @@ func logging(f http.HandlerFunc) http.HandlerFunc {
 	}
 }
 
-func foo(w http.ResponseWriter, r *http.Request) {
+func foo(w http.ResponseWriter, _ *http.Request) {
 	fmt.Fprintln(w, "foo")
 }
 
-func bar(w http.ResponseWriter, r *http.Request) {
+func bar(w http.ResponseWriter, _ *http.Request) {
 	fmt.Fprintln(w, "bar")
 }
 
-func main() {
+func Middleware() {
 	http.HandleFunc("/foo", logging(foo))
 	http.HandleFunc("/bar", logging(bar))
 

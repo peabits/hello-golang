@@ -1,4 +1,4 @@
-module github.com/peabits/go-web-example
+module hello-golang/go-web-examples
 
 go 1.20
 
