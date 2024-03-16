@@ -1,7 +1,8 @@
-go 1.20
+go 1.21.0
 
 use (
 	./go-by-example
 	./go-web-examples
-	./some-base-projects/realtime-chat
+	./hello-golang
+	./some-projects/realtime-chat
 )
