@@ -1,4 +1,4 @@
-# Hello? Go!
+# Hello, let's Go!
 
 [文档](docs/文档.md)
 
