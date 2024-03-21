@@ -35,5 +35,5 @@ func main() {
 	v1 := []floats{1, 2, 3}
 	v2 := []floats{0, 1, 0}
 	fmt.Println(dotProduct(v1, v2))
-	fmt.Println(dotProduct1(v1, v2))
+	// fmt.Println(dotProduct1(v1, v2))
 }
